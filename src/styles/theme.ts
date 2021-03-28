@@ -18,7 +18,9 @@ const theme = {
       dark: '#E1DDC4'
 
     },
-    black: '#000000',
+    black: {
+      main: '#000000',
+    }
   }
 }
 
