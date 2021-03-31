@@ -2,6 +2,7 @@ import React from 'react'
 import { Container } from '../styles/pages/Home'
 import Head from '../components/infra/Head'
 import { HeadlineTwo } from '../components/foundation/Typography'
+import Button from '../components/forms/Button'
 
 const Home: React.FC = () => {
   return (
@@ -9,6 +10,7 @@ const Home: React.FC = () => {
       <Head title="RamenGo" />
       <main>
         <HeadlineTwo color="vanilla">Hello world</HeadlineTwo>
+        <Button label="add" />
       </main>
     </Container>
   )
