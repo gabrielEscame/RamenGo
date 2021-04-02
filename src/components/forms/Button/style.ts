@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import theme from '../../../styles/theme'
 
 interface ButtonInterface {
-  color: string
   backgroundColor: string
   buttonSize: string
 }
@@ -26,7 +25,6 @@ export const ButtonContainer = styled.button<ButtonInterface>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: ${({ theme, color }) => theme.colors[color].main};
   border: none;
   background-color: ${({ theme, backgroundColor }) =>
     theme.colors[backgroundColor].main};

@@ -1,13 +1,15 @@
 import React from 'react'
 import { ButtonContainer } from './style'
 import { BodyTwo, BodyOne } from '../../foundation/Typography'
+import Icon from '../../foundation/Icon'
 
 interface ButtonInterface {
   label: string
   color?: 'vanilla' | 'blue'
   backgroundColor?: 'blue' | 'red' | 'yellow'
   textTransform?: string
-  icon?: 'right-arrow' | 'close'
+  iconId?: 'rightArrow' | 'close'
+  iconColor?: string
   weight?: number
   letterSpacing?: number
   buttonSize?: 'small' | 'large'
@@ -16,7 +18,7 @@ interface ButtonInterface {
 
 const buttonTypographyMapper = {
   small: BodyTwo,
-  large: BodyOne,
+  large: BodyOne
 }
 
 const Button: React.FC<ButtonInterface> = ({
@@ -26,26 +28,26 @@ const Button: React.FC<ButtonInterface> = ({
   textTransform = 'uppercase',
   weight = 800,
   letterSpacing = 1.78,
-  icon = 'right-arrow',
+  iconId = 'rightArrow',
+  iconColor,
   buttonSize = 'small',
-  isDisabled,
+  isDisabled = false
 }) => {
   const ButtonTypography = buttonTypographyMapper[buttonSize]
   return (
     <ButtonContainer
-      color={isDisabled ? 'vanilla': color}
       backgroundColor={isDisabled ? 'gray' : backgroundColor}
       buttonSize={buttonSize}
     >
       <ButtonTypography
-        color="vanilla"
+        color={isDisabled ? 'white' : color}
         weight={weight}
         letterSpacing={letterSpacing}
         textTransform={textTransform}
       >
         {label}
       </ButtonTypography>
-      <img src={`/icons/${icon}.svg`} alt={icon} />
+      <Icon iconId={iconId} color={isDisabled ? 'white' : iconColor} />
     </ButtonContainer>
   )
 }

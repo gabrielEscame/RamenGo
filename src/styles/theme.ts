@@ -16,13 +16,15 @@ const theme = {
     vanilla: {
       main: '#FAFAED',
       dark: '#E1DDC4'
-
     },
     gray: {
       main: '#C5C5C5'
     },
+    white: {
+      main: '#FFFFFF'
+    },
     black: {
-      main: '#000000',
+      main: '#000000'
     }
   }
 }
