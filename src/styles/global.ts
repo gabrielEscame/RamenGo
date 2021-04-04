@@ -9,7 +9,6 @@ export default createGlobalStyle`
   }
 
   body {
-    background: ${({theme}) =>  theme.colors.red.main};
-    color: ${({theme}) => theme.colors.vanilla.main};
+    background: ${({theme}) =>  theme.colors.vanilla.main};
   }
 `

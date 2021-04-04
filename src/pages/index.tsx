@@ -10,9 +10,8 @@ const Home: React.FC = () => {
     <Container>
       <Head title="ramenGo!" />
       <main>
-        <HeadlineTwo color="yellow">ramenGo!</HeadlineTwo>
-        <Button label="add" />
-        <Icon iconId="mushroom"/>
+        <HeadlineTwo color="blue">ramenGo!</HeadlineTwo>
+        <Button label="add" backgroundColor="yellow" />
       </main>
     </Container>
   )
