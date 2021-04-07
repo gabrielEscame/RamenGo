@@ -1,9 +1,9 @@
 const theme = {
   colors: {
     red: {
-      light: '#CE0F02',
+      dark: '#CE0F02',
       main: '#FF4E42',
-      dark: '#832626'
+      umber: '#832626'
     },
     blue: {
       main: '#1820EF',

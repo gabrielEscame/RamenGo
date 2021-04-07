@@ -11,7 +11,7 @@ const Home: React.FC = () => {
       <main>
         <HeadlineTwo color="yellow">ramenGo!</HeadlineTwo>
         <Card
-          item='wheat'
+          item='vegetables'
           isSelected={false}
         />
       </main>
