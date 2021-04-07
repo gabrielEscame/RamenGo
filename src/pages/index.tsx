@@ -4,14 +4,17 @@ import Head from '../components/infra/Head'
 import { HeadlineTwo } from '../components/foundation/Typography'
 import Card from '../components/layout/Card'
 
-
 const Home: React.FC = () => {
   return (
     <Container>
       <Head title="ramenGo!" />
       <main>
-        <HeadlineTwo color="blue">ramenGo!</HeadlineTwo>
-        <Card isSelected={false}/>
+        <HeadlineTwo color="yellow">ramenGo!</HeadlineTwo>
+        <Card
+          title="Salt"
+          description="Simple like the seawater, nothing more "
+          isSelected={true}
+        />
       </main>
     </Container>
   )
