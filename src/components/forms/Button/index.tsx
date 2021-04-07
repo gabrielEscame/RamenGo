@@ -40,7 +40,7 @@ const Button: React.FC<ButtonInterface> = ({
       >
         {label}
       </ButtonTypography>
-      <Icon iconId={iconId} color={isDisabled ? 'white' : ButtonIconColor} />
+      <Icon iconId={iconId} color={isDisabled ? 'white' : ButtonIconColor} height={16} width={20}/>
     </ButtonContainer>
   )
 }
