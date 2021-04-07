@@ -25,6 +25,7 @@ export const CardContainer = styled.div<CardContainerInterface>`
   }
 `
 export const CardTextContainer = styled.div<CardContainerInterface>`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -38,7 +39,7 @@ export const CardTextContainer = styled.div<CardContainerInterface>`
 
   ${BodyTwo} {
     color: ${({ isSelected, theme }) =>
-      isSelected ? theme.colors.vanilla.main : theme.colors.blue.main};
+      isSelected ? theme.colors.vanilla.main : theme.colors.black.main};
   }
 `
 
@@ -50,6 +51,6 @@ export const CardActionContainer = styled.div<CardContainerInterface>`
 
   ${HeadlineThree} {
     color: ${({ isSelected, theme }) =>
-      isSelected ? theme.colors.vanilla.main : theme.colors.blue.main};
+      isSelected ? theme.colors.vanilla.main : theme.colors.red.main};
   }
 `

@@ -11,9 +11,8 @@ const Home: React.FC = () => {
       <main>
         <HeadlineTwo color="yellow">ramenGo!</HeadlineTwo>
         <Card
-          title="Salt"
-          description="Simple like the seawater, nothing more "
-          isSelected={true}
+          item='wheat'
+          isSelected={false}
         />
       </main>
     </Container>
