@@ -25,6 +25,9 @@ const theme = {
     },
     black: {
       main: '#000000'
+    },
+    tana: {
+      main: '#E0DBBF'
     }
   }
 }

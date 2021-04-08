@@ -56,3 +56,8 @@ export const BodyTwo = styled.p<TypographyInterface>`
   line-height: ${({ lineHeight = '16px' }) => `${lineHeight}px`};
   text-transform: ${({ textTransform }) => textTransform};
 `
+
+export const Label = styled(BodyOne)`
+  font-weight: 800;
+  margin-bottom: 8px;
+`
