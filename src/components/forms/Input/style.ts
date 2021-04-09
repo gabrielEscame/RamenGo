@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { IconContainer } from '../../foundation/Icon/style'
 
 interface InputContainerInterface {
   errorMessage?: string
@@ -25,6 +26,12 @@ export const InputContainer = styled.input<InputContainerInterface>`
   }
 `
 
-export const LabelContainer = styled.label`
+export const ErrorMessageContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
 
+  > ${IconContainer} {
+    margin-right: 8px;
+  }
 `

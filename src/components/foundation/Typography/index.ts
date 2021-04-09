@@ -61,3 +61,10 @@ export const Label = styled(BodyOne)`
   font-weight: 800;
   margin-bottom: 8px;
 `
+
+export const ErrorMessage = styled(BodyTwo)`
+  color: ${({ theme }) => theme.colors.red.main};
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+`
