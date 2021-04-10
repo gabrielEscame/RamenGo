@@ -18,7 +18,7 @@ export const HeadlineOne = styled.h1<TypographyInterface>`
   text-transform: ${({ textTransform }) => textTransform};
 `
 
-export const HeadlineTwo = styled.h1<TypographyInterface>`
+export const HeadlineTwo = styled.h2<TypographyInterface>`
   color: ${({ theme, color }) =>
     color ? theme.colors[color].main : theme.colors.black.main};
   font-size: 32px;
@@ -28,7 +28,7 @@ export const HeadlineTwo = styled.h1<TypographyInterface>`
   text-transform: ${({ textTransform }) => textTransform};
 `
 
-export const HeadlineThree = styled.h1<TypographyInterface>`
+export const HeadlineThree = styled.h3<TypographyInterface>`
   color: ${({ theme, color }) =>
     color ? theme.colors[color].main : theme.colors.black.main};
   font-size: 20px;
@@ -47,19 +47,18 @@ export const BodyOne = styled.p<TypographyInterface>`
   text-transform: ${({ textTransform }) => textTransform};
 `
 
-export const BodyTwo = styled.p<TypographyInterface>`
-  color: ${({ theme, color }) =>
-    color ? theme.colors[color].main : theme.colors.black.main};
+export const BodyTwo = styled(BodyOne)`
   font-size: 14px;
-  font-weight: ${({ weight = 500 }) => weight};
-  letter-spacing: ${({ letterSpacing = 0 }) => `${letterSpacing}px`};
   line-height: ${({ lineHeight = '16px' }) => `${lineHeight}px`};
-  text-transform: ${({ textTransform }) => textTransform};
 `
 
-export const Label = styled(BodyOne)`
+export const LabelOne = styled(BodyOne)`
   font-weight: 800;
   margin-bottom: 8px;
+`
+
+export const LabelTwo = styled(LabelOne)`
+  font-size: 12px;
 `
 
 export const ErrorMessage = styled(BodyTwo)`

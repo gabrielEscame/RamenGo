@@ -1,6 +1,6 @@
 import React from 'react'
 import { InputContainer, InputField, ErrorMessageContainer } from './style'
-import { Label, ErrorMessage } from '../../foundation/Typography'
+import { LabelOne, ErrorMessage } from '../../foundation/Typography'
 import Icon from '../../foundation/Icon'
 
 interface InputInterface {
@@ -23,7 +23,7 @@ const Input: React.FC<InputInterface> = ({
 }) => {
   return (
     <InputContainer>
-      <Label>{label}</Label>
+      <LabelOne>{label}</LabelOne>
       <InputField onChange={onChange} errorMessageType={errorMessageType} />
       {errorMessageType ? (
         <ErrorMessageContainer>
