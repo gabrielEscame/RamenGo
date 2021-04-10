@@ -16,15 +16,21 @@ const errorMessageMapper = {
   phone: 'Invalid phone number. Put the code of your city.'
 }
 
-const Input: React.FC<InputInterface> = ({ onChange, label, errorMessageType }) => {
+const Input: React.FC<InputInterface> = ({
+  onChange,
+  label,
+  errorMessageType
+}) => {
   return (
     <InputContainer>
       <Label>{label}</Label>
       <InputField onChange={onChange} errorMessageType={errorMessageType} />
-      <ErrorMessageContainer>
-        <Icon iconId="error" height={16} width={16} />
-        <ErrorMessage>{errorMessageMapper[errorMessageType]}</ErrorMessage>
-      </ErrorMessageContainer>
+      {errorMessageType ? (
+        <ErrorMessageContainer>
+          <Icon iconId="error" height={16} width={16} />
+          <ErrorMessage>{errorMessageMapper[errorMessageType]}</ErrorMessage>
+        </ErrorMessageContainer>
+      ) : null}
     </InputContainer>
   )
 }

@@ -12,7 +12,7 @@ const Home: React.FC = () => {
       <main>
         <HeadlineTwo color="yellow">ramenGo!</HeadlineTwo>
         <Card item="vegetables" isSelected={false} />
-        <Input onChange={e => console.log(e.target.value)} label="Label" errorMessageType='name'/>
+        <Input onChange={e => console.log(e.target.value)} label="Label" />
       </main>
     </Container>
   )
