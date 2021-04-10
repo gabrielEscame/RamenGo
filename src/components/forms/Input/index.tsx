@@ -1,5 +1,5 @@
 import React from 'react'
-import { InputContainer, ErrorMessageContainer } from './style'
+import { InputContainer, InputField, ErrorMessageContainer } from './style'
 import { Label, ErrorMessage } from '../../foundation/Typography'
 import Icon from '../../foundation/Icon'
 
@@ -18,14 +18,14 @@ const errorMessageMapper = {
 
 const Input: React.FC<InputInterface> = ({ onChange, label, errorMessageType }) => {
   return (
-    <>
+    <InputContainer>
       <Label>{label}</Label>
-      <InputContainer onChange={onChange} errorMessageType={errorMessageType} />
+      <InputField onChange={onChange} errorMessageType={errorMessageType} />
       <ErrorMessageContainer>
         <Icon iconId="error" height={16} width={16} />
         <ErrorMessage>{errorMessageMapper[errorMessageType]}</ErrorMessage>
       </ErrorMessageContainer>
-    </>
+    </InputContainer>
   )
 }
 
