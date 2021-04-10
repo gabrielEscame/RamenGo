@@ -16,9 +16,7 @@ const Input: React.FC<InputInterface> = ({ onChange, label, errorMessage }) => {
       <InputContainer onChange={onChange} errorMessage={errorMessage} />
       <ErrorMessageContainer>
         <Icon iconId="error" height={16} width={16} />
-        <ErrorMessage>
-          Type a valid name. Don’t use numbers or symbols.
-        </ErrorMessage>
+        <ErrorMessage>{errorMessage}</ErrorMessage>
       </ErrorMessageContainer>
     </>
   )
