@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { IconContainer } from '../../foundation/Icon/style'
 
 interface InputContainerInterface {
-  errorMessage?: string
+  errorMessageType?: string
 }
 
 export const InputContainer = styled.input<InputContainerInterface>`
@@ -10,8 +10,8 @@ export const InputContainer = styled.input<InputContainerInterface>`
   max-width: 352px;
   height: 40px;
   border: 2px solid;
-  border-color: ${({ theme, errorMessage }) =>
-    errorMessage ? theme.colors.red.main : theme.colors.tana.main};
+  border-color: ${({ theme, errorMessageType }) =>
+    errorMessageType ? theme.colors.red.main : theme.colors.tana.main};
   border-radius: 10px;
   padding: 8px 14px;
   font-size: 16px;
