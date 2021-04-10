@@ -25,6 +25,7 @@ import VegetablesActive from './vegetablesActive.svg'
 import MushroomActive from './mushroomActive.svg'
 import EggActive from './eggActive.svg'
 import Error from './error.svg'
+import Pasta from './pasta.svg'
 
 const iconMapper = {
   rightArrow: RightArrow,
@@ -54,6 +55,7 @@ const iconMapper = {
   mushroomActive: MushroomActive,
   eggActive: EggActive,
   error: Error,
+  pasta: Pasta
 }
 
 export default iconMapper
