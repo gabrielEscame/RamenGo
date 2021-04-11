@@ -8,6 +8,10 @@ interface TypographyInterface {
   textTransform?: string
 }
 
+interface LabelTwoInterface extends TypographyInterface {
+  done?: Boolean
+}
+
 export const HeadlineOne = styled.h1<TypographyInterface>`
   color: ${({ theme, color }) =>
     color ? theme.colors[color].main : theme.colors.black.main};
@@ -57,8 +61,10 @@ export const LabelOne = styled(BodyOne)`
   margin-bottom: 8px;
 `
 
-export const LabelTwo = styled(LabelOne)`
+export const LabelTwo = styled(LabelOne)<LabelTwoInterface>`
   font-size: 12px;
+  color: ${({ done, theme }) =>
+    done ? theme.colors.yellow.main : theme.colors.vanilla.dark};
 `
 
 export const ErrorMessage = styled(BodyTwo)`
