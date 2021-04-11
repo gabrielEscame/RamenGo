@@ -26,6 +26,8 @@ import MushroomActive from './mushroomActive.svg'
 import EggActive from './eggActive.svg'
 import Error from './error.svg'
 import Pasta from './pasta.svg'
+import Check from './check.svg'
+import Circle from './circle.svg'
 
 const iconMapper = {
   rightArrow: RightArrow,
@@ -55,7 +57,9 @@ const iconMapper = {
   mushroomActive: MushroomActive,
   eggActive: EggActive,
   error: Error,
-  pasta: Pasta
+  pasta: Pasta,
+  check: Check,
+  circle: Circle
 }
 
 export default iconMapper
