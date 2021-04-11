@@ -6,6 +6,7 @@ import {
   StepsCounterProgress
 } from './style'
 import Icon from '../../foundation/Icon'
+import enhancer from './hooks'
 
 interface StepInterface {
   name: string
@@ -14,29 +15,17 @@ interface StepInterface {
 interface StepsCounterInterface {
   steps: Array<StepInterface>
   currentStep: number
-}
-
-const isStepDone = (stepIndex: number, currentStep: number) => {
-  if (stepIndex + 1 <= currentStep) {
-    return true
-  } else {
-    return false
-  }
-}
-
-const isLastStep = (stepIndex: number, stepsLength: number) => {
-  if (stepIndex + 1 === stepsLength) {
-    return true
-  } else {
-    return false
-  }
+  isStepDone: (idx: Number, currentStep: Number) => Boolean
+  isLastStep: (idx: Number, stepsLength: Number) => Boolean
 }
 
 const Noop = () => null
 
 const StepsCounter: React.FC<StepsCounterInterface> = ({
   steps,
-  currentStep
+  currentStep,
+  isStepDone,
+  isLastStep
 }) => {
   return (
     <StepsCounterContainer>
@@ -77,4 +66,4 @@ const StepsCounter: React.FC<StepsCounterInterface> = ({
   )
 }
 
-export default StepsCounter
+export default enhancer(StepsCounter)
