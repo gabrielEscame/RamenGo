@@ -10,9 +10,11 @@ interface IconContainerInterface {
 export const IconContainer = styled.div<IconContainerInterface>`
   display: flex;
   align-items: center;
-  color: ${({ color = 'yellow', theme, colorVariation }) => theme.colors[color][colorVariation]};
+  color: ${({ color = 'yellow', theme, colorVariation }) =>
+    theme.colors[color][colorVariation]};
   width: fit-content;
   height: fit-content;
+  transition: all ease 0.3s;
 
   svg {
     height: ${({ height = 48 }) => `${height}px`};
