@@ -17,7 +17,7 @@ export const StepsCounterText = styled.div<StepsCounterContainerInterface>`
 
   > ${LabelTwo} {
     margin-right: 60px;
-    min-width: 53px;
+    min-width: 54px;
     text-align: center;
 
     &:last-child {
@@ -32,7 +32,7 @@ export const StepsCounterProgress = styled.div<StepsCounterContainerInterface>`
 
   > ${IconContainer} {
     &:nth-child(even) {
-      margin: 0 8px;
+      margin: 0 9px;
     }
   }
 `
