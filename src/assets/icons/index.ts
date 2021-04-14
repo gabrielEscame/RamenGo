@@ -28,6 +28,7 @@ import Error from './error.svg'
 import Pasta from './pasta.svg'
 import Check from './check.svg'
 import Circle from './circle.svg'
+import RamenGo from './ramenGo.svg'
 
 const iconMapper = {
   rightArrow: RightArrow,
@@ -59,7 +60,8 @@ const iconMapper = {
   error: Error,
   pasta: Pasta,
   check: Check,
-  circle: Circle
+  circle: Circle,
+  ramenGo: RamenGo
 }
 
 export default iconMapper
