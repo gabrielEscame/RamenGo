@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 import theme from '../../../styles/theme'
+import { IconContainer } from '../../foundation/Icon/style'
 
 interface ButtonInterface {
   backgroundColor: string
   buttonSize: string
+  iconPosition: 'right' | 'left'
 }
 
 const buttonSizeMapper = {
@@ -21,8 +23,14 @@ const buttonSizeMapper = {
   }
 }
 
+const iconPositionMapper = {
+  right: 'row',
+  left: 'row-reverse'
+}
+
 export const ButtonContainer = styled.button<ButtonInterface>`
   display: flex;
+  flex-direction: ${({iconPosition}) => iconPositionMapper[iconPosition]};
   justify-content: space-between;
   align-items: center;
   border: none;
@@ -42,5 +50,9 @@ export const ButtonContainer = styled.button<ButtonInterface>`
     background-color: ${({ theme, backgroundColor }) =>
     theme.colors[backgroundColor].dark};
     outline: 0;
+  }
+
+  ${IconContainer} {
+    transform: ${({iconPosition}) => iconPosition === 'left' ? 'rotateZ(180deg)' : 'none'}
   }
 `

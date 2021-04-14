@@ -9,6 +9,7 @@ interface ButtonInterface {
   iconId?: 'rightArrow' | 'close'
   buttonSize?: 'small' | 'large'
   isDisabled?: boolean
+  iconPosition?: 'right' | 'left'
 }
 
 const buttonTypographyMapper = {
@@ -21,7 +22,8 @@ const Button: React.FC<ButtonInterface> = ({
   backgroundColor = 'blue',
   iconId = 'rightArrow',
   buttonSize = 'small',
-  isDisabled = false
+  isDisabled = false,
+  iconPosition = 'right'
 }) => {
   const ButtonTypography = buttonTypographyMapper[buttonSize]
   const ButtonTypographyColor = backgroundColor == 'yellow' ? 'blue' : 'vanilla'
@@ -31,6 +33,7 @@ const Button: React.FC<ButtonInterface> = ({
     <ButtonContainer
       backgroundColor={isDisabled ? 'gray' : backgroundColor}
       buttonSize={buttonSize}
+      iconPosition={iconPosition}
     >
       <ButtonTypography
         color={isDisabled ? 'white' : ButtonTypographyColor}
