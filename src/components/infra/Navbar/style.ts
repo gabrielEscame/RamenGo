@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
-interface NavbarContainerInterface {}
-
-export const NavbarContainer = styled.nav<NavbarContainerInterface>`
+export const NavbarContainer = styled.nav`
   display: flex;
   position: fixed;
   top: 0;
