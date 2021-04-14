@@ -10,21 +10,19 @@ const Home: React.FC = () => {
   return (
     <Container>
       <Head title="ramenGo!" />
-      <main>
-        <HeadlineTwo color="yellow">ramenGo!</HeadlineTwo>
-        <StepsCounter
-          steps={[
-            { name: 'Broth' },
-            { name: 'Noodles' },
-            { name: 'Meat' },
-            { name: 'Toppings' },
-            { name: 'Order' },
-          ]}
-          currentStep={1}
-        />
-        <Card item="vegetables" isSelected={false} />
-        <Input onChange={e => console.log(e.target.value)} label="Label" />
-      </main>
+
+      <StepsCounter
+        steps={[
+          { name: 'Broth' },
+          { name: 'Noodles' },
+          { name: 'Meat' },
+          { name: 'Toppings' },
+          { name: 'Order' }
+        ]}
+        currentStep={1}
+      />
+      <Card item="vegetables" isSelected={false} />
+      <Input onChange={e => console.log(e.target.value)} label="Label" />
     </Container>
   )
 }
