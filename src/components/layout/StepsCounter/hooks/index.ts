@@ -1,4 +1,4 @@
-import compose from '../../../../utils/compose'
+import composer from '../../../../utils/composer'
 
 const useStepsCounter = () => {
   const isStepDone = (stepIndex: number, currentStep: number) => {
@@ -23,4 +23,4 @@ const useStepsCounter = () => {
   }
 }
 
-export default compose(useStepsCounter)
+export default composer(useStepsCounter)

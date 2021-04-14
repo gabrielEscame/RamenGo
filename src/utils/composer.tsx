@@ -1,8 +1,8 @@
 import React from 'react'
 
-const compose = (...functions) => (Component: React.FC) => {
+const composer = (...functions) => (Component: React.FC) => {
   return props => {
-    const composeProps = functions.reduceRight((enhacerFunction, func) => {
+    const composeProps = functions.reduce((enhacerFunction, func) => {
       const functionsProps = func(enhacerFunction)
       return {
         ...enhacerFunction,
@@ -13,4 +13,4 @@ const compose = (...functions) => (Component: React.FC) => {
   }
 }
 
-export default compose
+export default composer
