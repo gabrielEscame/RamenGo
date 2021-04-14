@@ -1,16 +1,13 @@
 import React from 'react'
 import { Container } from '../styles/pages/Home'
 import Head from '../components/infra/Head'
-import { HeadlineTwo } from '../components/foundation/Typography'
-import Card from '../components/layout/Card'
-import Input from '../components/forms/Input'
+import StepOptions from '../components/layout/StepOptions'
 import StepsCounter from '../components/layout/StepsCounter'
 
 const Home: React.FC = () => {
   return (
     <Container>
       <Head title="ramenGo!" />
-
       <StepsCounter
         steps={[
           { name: 'Broth' },
@@ -21,8 +18,11 @@ const Home: React.FC = () => {
         ]}
         currentStep={1}
       />
-      <Card item="vegetables" isSelected={false} />
-      <Input onChange={e => console.log(e.target.value)} label="Label" />
+      <StepOptions
+        title="First things first: select your favorite broth."
+        description="It will give the whole flavor on your ramen soup. "
+        items={['salt', 'shoyu', 'miso']}
+      />
     </Container>
   )
 }
