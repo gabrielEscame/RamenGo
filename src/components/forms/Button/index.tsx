@@ -20,6 +20,17 @@ const buttonTypographySizeMapper = {
   large: BodyOne
 }
 
+const buttonStyleMapper = {
+  normal: {
+    textTransform: 'upperCase',
+    textDecoration: 'none'
+  },
+  text: {
+    textTransform: 'capitalize',
+    textDecoration: 'underline'
+  }
+}
+
 const Button: React.FC<ButtonInterface> = ({
   label,
   labelColor = 'vanilla',
@@ -44,8 +55,8 @@ const Button: React.FC<ButtonInterface> = ({
         color={isDisabled ? 'white' : labelColor}
         weight={800}
         letterSpacing={1.78}
-        textTransform={buttonStyle === 'normal' ? 'uppercase' : 'capitalize'}
-        textDecoration={buttonStyle === 'normal' ? 'none' : 'underline'}
+        textTransform={buttonStyleMapper[buttonStyle].textTransform}
+        textDecoration={buttonStyleMapper[buttonStyle].textDecoration}
       >
         {label}
       </ButtonTypography>
