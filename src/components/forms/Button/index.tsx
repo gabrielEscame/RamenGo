@@ -7,43 +7,49 @@ interface ButtonInterface {
   label: string
   backgroundColor?: 'blue' | 'red' | 'yellow'
   iconId?: 'rightArrow' | 'close'
+  iconColor?: 'yellow' | 'red' | 'blue'
+  iconPosition?: 'right' | 'left'
   buttonSize?: 'small' | 'large'
   isDisabled?: boolean
-  iconPosition?: 'right' | 'left'
+  labelColor?: 'blue' | 'vanilla'
+  buttonStyle?: 'normal' | 'text'
 }
 
-const buttonTypographyMapper = {
+const buttonTypographySizeMapper = {
   small: BodyTwo,
   large: BodyOne
 }
 
 const Button: React.FC<ButtonInterface> = ({
   label,
+  labelColor = 'vanilla',
   backgroundColor = 'blue',
   iconId = 'rightArrow',
+  iconColor = 'yellow',
   buttonSize = 'small',
   isDisabled = false,
-  iconPosition = 'right'
+  iconPosition = 'right',
+  buttonStyle = 'normal'
 }) => {
-  const ButtonTypography = buttonTypographyMapper[buttonSize]
-  const ButtonTypographyColor = backgroundColor == 'yellow' ? 'blue' : 'vanilla'
-  const ButtonIconColor = backgroundColor == 'yellow' ? 'red' : 'yellow'
+  const ButtonTypography = buttonTypographySizeMapper[buttonSize]
 
   return (
     <ButtonContainer
       backgroundColor={isDisabled ? 'gray' : backgroundColor}
       buttonSize={buttonSize}
       iconPosition={iconPosition}
+      buttonStyle={buttonStyle}
     >
       <ButtonTypography
-        color={isDisabled ? 'white' : ButtonTypographyColor}
+        color={isDisabled ? 'white' : labelColor}
         weight={800}
         letterSpacing={1.78}
-        textTransform='uppercase'
+        textTransform={buttonStyle === 'normal' ? 'uppercase' : 'capitalize'}
+        textDecoration={buttonStyle === 'normal' ? 'none' : 'underline'}
       >
         {label}
       </ButtonTypography>
-      <Icon iconId={iconId} color={isDisabled ? 'white' : ButtonIconColor} height={16} width={20}/>
+      <Icon iconId={iconId} color={isDisabled ? 'white' : iconColor} height={16} width={20}/>
     </ButtonContainer>
   )
 }

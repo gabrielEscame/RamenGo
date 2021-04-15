@@ -45,7 +45,7 @@ const StepOptions: React.FC<StepOptionsInterface> = ({
         ))}
       </StepOptionsWrapper>
       <StepOptionsActions>
-          <Button iconPosition='left' label="back"/>
+          <Button iconPosition='left' label="back" buttonStyle='text' labelColor='blue' iconColor='blue'/>
           <Button label="next" isDisabled={true}/>
       </StepOptionsActions>
     </StepOptionsContainer>
