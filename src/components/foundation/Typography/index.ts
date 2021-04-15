@@ -6,6 +6,7 @@ interface TypographyInterface {
   lineHeight?: number
   letterSpacing?: number
   textTransform?: string
+  textDecoration?: string
 }
 
 interface LabelTwoInterface extends TypographyInterface {
@@ -20,6 +21,7 @@ export const HeadlineOne = styled.h1<TypographyInterface>`
   letter-spacing: ${({ letterSpacing = 0 }) => `${letterSpacing}px`};
   line-height: ${({ lineHeight = '100px' }) => `${lineHeight}px`};
   text-transform: ${({ textTransform }) => textTransform};
+  text-decoration: ${({ textDecoration = '' }) => textDecoration};
 `
 
 export const HeadlineTwo = styled.h2<TypographyInterface>`
@@ -30,6 +32,7 @@ export const HeadlineTwo = styled.h2<TypographyInterface>`
   letter-spacing: ${({ letterSpacing = 0 }) => `${letterSpacing}px`};
   line-height: ${({ lineHeight = '40px' }) => `${lineHeight}px`};
   text-transform: ${({ textTransform }) => textTransform};
+  text-decoration: ${({ textDecoration = '' }) => textDecoration};
 `
 
 export const HeadlineThree = styled.h3<TypographyInterface>`
@@ -40,6 +43,7 @@ export const HeadlineThree = styled.h3<TypographyInterface>`
   letter-spacing: ${({ letterSpacing = 0 }) => `${letterSpacing}px`};
   line-height: ${({ lineHeight = '28px' }) => `${lineHeight}px`};
   text-transform: ${({ textTransform }) => textTransform};
+  text-decoration: ${({ textDecoration = '' }) => textDecoration};
 `
 export const BodyOne = styled.p<TypographyInterface>`
   color: ${({ theme, color }) =>
@@ -49,6 +53,7 @@ export const BodyOne = styled.p<TypographyInterface>`
   letter-spacing: ${({ letterSpacing = 0 }) => `${letterSpacing}px`};
   line-height: ${({ lineHeight = '24px' }) => `${lineHeight}px`};
   text-transform: ${({ textTransform }) => textTransform};
+  text-decoration: ${({ textDecoration = '' }) => textDecoration};
 `
 
 export const BodyTwo = styled(BodyOne)`
