@@ -31,6 +31,7 @@ const iconPositionMapper = {
 
 export const ButtonContainer = styled.button<ButtonInterface>`
   display: flex;
+  cursor: pointer;
   flex-direction: ${({ iconPosition }) => iconPositionMapper[iconPosition]};
   justify-content: space-between;
   align-items: center;
@@ -48,12 +49,14 @@ export const ButtonContainer = styled.button<ButtonInterface>`
     buttonStyle === 'normal' ? buttonSizeMapper[buttonSize].padding : '0'};
   :hover {
     box-shadow: 0 2px 8px 0
-      ${({ theme, backgroundColor }) =>
-        `${theme.colors[backgroundColor].main}66`};
+      ${({ theme, backgroundColor, buttonStyle }) =>
+        buttonStyle === 'normal'
+          ? `${theme.colors[backgroundColor].main}66`
+          : 'none'};
   }
   :focus {
-    background-color: ${({ theme, backgroundColor }) =>
-      theme.colors[backgroundColor].dark};
+    background-color: ${({ theme, backgroundColor, buttonStyle }) =>
+      buttonStyle === 'normal' ? theme.colors[backgroundColor].dark : 'none'};
     outline: 0;
   }
 
