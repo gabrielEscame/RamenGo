@@ -19,6 +19,7 @@ interface CardInterface {
     | 'mushroom'
     | 'egg'
   isSelected?: boolean
+  buttonAction?: () => void
 }
 
 const cardItemMapper = {
@@ -96,7 +97,7 @@ const cardItemMapper = {
   }
 }
 
-const Card: React.FC<CardInterface> = ({ item, isSelected = false }) => {
+const Card: React.FC<CardInterface> = ({ item, isSelected = false, buttonAction }) => {
   return (
     <CardContainer isSelected={isSelected}>
       <Icon
@@ -120,6 +121,8 @@ const Card: React.FC<CardInterface> = ({ item, isSelected = false }) => {
           label={isSelected ? 'Remove' : 'Add'}
           backgroundColor={isSelected ? 'yellow' : 'red'}
           iconId={isSelected ? 'close' : 'rightArrow'}
+          iconColor={isSelected ? 'red' : 'yellow'}
+          onClick={buttonAction}
         />
       </CardActionContainer>
     </CardContainer>

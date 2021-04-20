@@ -7,6 +7,7 @@ interface ButtonInterface {
   buttonSize: string
   iconPosition: 'right' | 'left'
   buttonStyle: 'normal' | 'text'
+  isDisabled: boolean
 }
 
 const buttonSizeMapper = {
@@ -31,7 +32,7 @@ const iconPositionMapper = {
 
 export const ButtonContainer = styled.button<ButtonInterface>`
   display: flex;
-  cursor: pointer;
+  cursor: ${({ isDisabled }) => (isDisabled ? 'none' : 'pointer')};
   flex-direction: ${({ iconPosition }) => iconPositionMapper[iconPosition]};
   justify-content: space-between;
   align-items: center;

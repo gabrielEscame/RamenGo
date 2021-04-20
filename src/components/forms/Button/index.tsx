@@ -13,6 +13,7 @@ interface ButtonInterface {
   isDisabled?: boolean
   labelColor?: 'blue' | 'vanilla'
   buttonStyle?: 'normal' | 'text'
+  onClick?: (arg :any) => any
 }
 
 const buttonTypographySizeMapper = {
@@ -40,7 +41,8 @@ const Button: React.FC<ButtonInterface> = ({
   buttonSize = 'small',
   isDisabled = false,
   iconPosition = 'right',
-  buttonStyle = 'normal'
+  buttonStyle = 'normal',
+  onClick,
 }) => {
   const ButtonTypography = buttonTypographySizeMapper[buttonSize]
 
@@ -50,6 +52,9 @@ const Button: React.FC<ButtonInterface> = ({
       buttonSize={buttonSize}
       iconPosition={iconPosition}
       buttonStyle={buttonStyle}
+      onClick={onClick}
+      isDisabled={isDisabled}
+      disabled={isDisabled}
     >
       <ButtonTypography
         color={isDisabled ? 'white' : labelColor}

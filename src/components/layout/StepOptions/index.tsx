@@ -8,6 +8,7 @@ import {
   StepOptionsWrapper,
   StepOptionsActions
 } from './style'
+import enhancer from './hooks'
 
 interface StepOptionsInterface {
   title: string
@@ -26,12 +27,18 @@ interface StepOptionsInterface {
     | 'mushroom'
     | 'egg'
   >
+  handleCardClick: (option: string) => () => void
+  selectedOption: string
+  stepNotValid: boolean
 }
 
 const StepOptions: React.FC<StepOptionsInterface> = ({
   title,
   description,
-  items
+  items,
+  handleCardClick,
+  selectedOption,
+  stepNotValid
 }) => {
   return (
     <StepOptionsContainer>
@@ -41,15 +48,26 @@ const StepOptions: React.FC<StepOptionsInterface> = ({
       </StepOptionsText>
       <StepOptionsWrapper>
         {items.map((e, idx) => (
-          <Card item={e} key={idx} />
+          <Card
+            item={e}
+            key={idx}
+            isSelected={selectedOption === e}
+            buttonAction={handleCardClick(e)}
+          />
         ))}
       </StepOptionsWrapper>
       <StepOptionsActions>
-          <Button iconPosition='left' label="back" buttonStyle='text' labelColor='blue' iconColor='blue'/>
-          <Button label="next" isDisabled={true}/>
+        <Button
+          iconPosition="left"
+          label="back"
+          buttonStyle="text"
+          labelColor="blue"
+          iconColor="blue"
+        />
+        <Button label="next" isDisabled={stepNotValid} />
       </StepOptionsActions>
     </StepOptionsContainer>
   )
 }
 
-export default StepOptions
+export default enhancer(StepOptions)
